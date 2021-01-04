@@ -6,7 +6,9 @@ namespace AddressBookLinqAndDataTable
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("************Welcome To AddressBook Linq And DataTable************");
+            AddressBookDataTable addressBookDataTable = new AddressBookDataTable();
+            addressBookDataTable.createAddressBookTable();
         }
     }
 }

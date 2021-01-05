@@ -39,14 +39,19 @@ namespace AddressBookLinqAndDataTable
              contact.FirstName = Console.ReadLine();
              addressBookDataTable.deleteParticularContact(contact);*/
 
-            Contact contact = new Contact();
+            /*Contact contact = new Contact();
             Console.WriteLine("Enter the City  ");
             contact.City = Console.ReadLine();
             addressBookDataTable.retrieveContactByCity(contact);
+*/
+            /* Console.WriteLine("Enter the State ");
+             contact.State = Console.ReadLine();
+             addressBookDataTable.retrieveContactByState(contact);*/
 
-           /* Console.WriteLine("Enter the State ");
-            contact.State = Console.ReadLine();
-            addressBookDataTable.retrieveContactByState(contact);*/
+            Contact contact = new Contact();
+            Console.WriteLine("Enter the City ");
+            contact.City = Console.ReadLine();
+            addressBookDataTable.sortContactByGivenCity(contact);
         }
     }
 }

@@ -75,5 +75,37 @@ namespace AddressBookLinqAndDataTable
                 Console.WriteLine("Delete contact successfully");
             }
         }
+
+        public void retrieveContactByState(Contact contact)
+        {
+            var records = from dataTable in dataTable.AsEnumerable().Where(dataTable => dataTable.Field<string>("State") == contact.State) select dataTable;
+            foreach (var record in records.AsEnumerable())
+            {
+                Console.WriteLine("\nFirstName:-" + record.Field<string>("FirstName"));
+                Console.WriteLine("LastName:-" + record.Field<string>("LastName"));
+                Console.WriteLine("Address:-" + record.Field<string>("Address"));
+                Console.WriteLine("City:-" + record.Field<string>("City"));
+                Console.WriteLine("State:-" + record.Field<string>("State"));
+                Console.WriteLine("ZipCode:-" + record.Field<int>("ZipCode"));
+                Console.WriteLine("PhoneNumber:-" + record.Field<long>("PhoneNumber"));
+                Console.WriteLine("Email:-" + record.Field<string>("Email"));
+            }
+        }
+
+        public void retrieveContactByCity(Contact contact)
+        {
+            var records = from dataTable in dataTable.AsEnumerable().Where(dataTable => dataTable.Field<string>("City") == contact.City) select dataTable;
+            foreach (var record in records.AsEnumerable())
+            {
+                Console.WriteLine("\nFirstName:-" + record.Field<string>("FirstName"));
+                Console.WriteLine("LastName:-" + record.Field<string>("LastName"));
+                Console.WriteLine("Address:-" + record.Field<string>("Address"));
+                Console.WriteLine("City:-" + record.Field<string>("City"));
+                Console.WriteLine("State:-" + record.Field<string>("State"));
+                Console.WriteLine("ZipCode:-" + record.Field<int>("ZipCode"));
+                Console.WriteLine("PhoneNumber:-" + record.Field<long>("PhoneNumber"));
+                Console.WriteLine("Email:-" + record.Field<string>("Email"));
+            }
+        }
     }
 }

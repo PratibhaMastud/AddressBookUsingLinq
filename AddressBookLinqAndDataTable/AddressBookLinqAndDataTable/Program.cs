@@ -30,14 +30,23 @@ namespace AddressBookLinqAndDataTable
              Console.WriteLine("Enter the email = ");
              contact.Email = Console.ReadLine();*/
             //addressBookDataTable.displayAddressBook();
-           
-            //addressBookDataTable.editContact(table);
-                        
-            Contact contact = new Contact();
 
-            Console.WriteLine("Enter the first name = ");
-            contact.FirstName = Console.ReadLine();
-            addressBookDataTable.deleteParticularContact(contact);
+            //addressBookDataTable.editContact(table);
+
+            /* Contact contact = new Contact();
+
+             Console.WriteLine("Enter the first name = ");
+             contact.FirstName = Console.ReadLine();
+             addressBookDataTable.deleteParticularContact(contact);*/
+
+            Contact contact = new Contact();
+            Console.WriteLine("Enter the City  ");
+            contact.City = Console.ReadLine();
+            addressBookDataTable.retrieveContactByCity(contact);
+
+           /* Console.WriteLine("Enter the State ");
+            contact.State = Console.ReadLine();
+            addressBookDataTable.retrieveContactByState(contact);*/
         }
     }
 }

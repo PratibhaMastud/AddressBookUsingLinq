@@ -53,7 +53,10 @@ namespace AddressBookLinqAndDataTable
             contact.City = Console.ReadLine();*/
             //addressBookDataTable.sortContactByGivenCity(contact);
 
-            addressBookDataTable.getCountByAddressBookType();
+            //addressBookDataTable.getCountByAddressBookType();
+
+
+            addressBookDataTable.AddPersonInSameTypes(table);
         }
     }
 }

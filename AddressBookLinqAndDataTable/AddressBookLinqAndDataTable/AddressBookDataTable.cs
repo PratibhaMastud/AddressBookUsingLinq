@@ -32,6 +32,9 @@ namespace AddressBookLinqAndDataTable
             dataTable.Rows.Add("rahul", "sable", "chembor", "Mumbai", "maharashtra", 400703, 9987932434, "sable@gmail.com", "FriendsBook", "Friends");
             dataTable.Rows.Add("kartik", "bhoir", " koper khairne", "navimumbai", "maharashtra", 400701, 9987932434, "bhoir@gmail.com", "FriendsBook", "Friends");
             dataTable.Rows.Add("priyanka", "parde", "vashi", "navimumbai", "maharashtra", 400701, 9987932434, "parde@gmail.com", "FamilyBook", "Family");
+            dataTable.Rows.Add("Snehal", "parde", "vashi", "navimumbai", "maharashtra", 400701, 9987932434, "parde@gmail.com", "FamilyBook", "Family");
+            dataTable.Rows.Add("Snehal", "parde", "vashi", "navimumbai", "maharashtra", 400701, 9987932434, "parde@gmail.com", "FamilyBook", "Friends");
+
             return dataTable;
         }
 
@@ -46,7 +49,8 @@ namespace AddressBookLinqAndDataTable
                 Console.WriteLine("State:-" + row.Field<string>("State"));
                 Console.WriteLine("ZipCode:-" + row.Field<int>("ZipCode"));
                 Console.WriteLine("PhoneNumber:-" + row.Field<long>("PhoneNumber"));
-                Console.WriteLine("Email:-" + row.Field<string>("Email"));
+                Console.WriteLine("AddressBookName:-" + row.Field<string>("AddressBookName"));
+                Console.WriteLine("AddressBookType:-" + row.Field<string>("AddressBookType"));
             }
         }
 
@@ -108,7 +112,6 @@ namespace AddressBookLinqAndDataTable
                 Console.WriteLine("ZipCode:-" + record.Field<int>("ZipCode"));
                 Console.WriteLine("PhoneNumber:-" + record.Field<long>("PhoneNumber"));
                 Console.WriteLine("Email:-" + record.Field<string>("Email"));
-
             }
         }
 
@@ -139,6 +142,25 @@ namespace AddressBookLinqAndDataTable
             foreach (var list in countData)
             {
                 Console.WriteLine("AddressBookType =" + list.AddressBookType + " , " + "AddressBookCount = " + list.AddressBookTypeCount);
+            }
+        }
+
+        public void AddPersonInSameTypes(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                            .Where(x => x["FirstName"].Equals("Snehal"));
+            foreach (DataRow row in contacts)
+            {
+                Console.WriteLine("\nFirstName:-" + row.Field<string>("FirstName"));
+                Console.WriteLine("LastName:-" + row.Field<string>("LastName"));
+                Console.WriteLine("Address:-" + row.Field<string>("Address"));
+                Console.WriteLine("City:-" + row.Field<string>("City"));
+                Console.WriteLine("State:-" + row.Field<string>("State"));
+                Console.WriteLine("ZipCode:-" + row.Field<int>("ZipCode"));
+                Console.WriteLine("PhoneNumber:-" + row.Field<long>("PhoneNumber"));
+                Console.WriteLine("AddressBookName:-" + row.Field<string>("AddressBookName"));
+                Console.WriteLine("AddressBookType:-" + row.Field<string>("AddressBookType"));
+
             }
         }
     }

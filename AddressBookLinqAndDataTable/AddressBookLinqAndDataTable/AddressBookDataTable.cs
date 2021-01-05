@@ -127,6 +127,20 @@ namespace AddressBookLinqAndDataTable
                 Console.WriteLine("Email:-" + record.Field<string>("Email"));
             }
         }
+
+        public void getCountByAddressBookType()
+        {
+            var countData = dataTable.AsEnumerable().GroupBy(x => x.Field<string>("AddressBookType")).
+                Select(x => new
+                {
+                    AddressBookType = x.Key,
+                    AddressBookTypeCount = x.Count()
+                });
+            foreach (var list in countData)
+            {
+                Console.WriteLine("AddressBookType =" + list.AddressBookType + " , " + "AddressBookCount = " + list.AddressBookTypeCount);
+            }
+        }
     }
 }
 

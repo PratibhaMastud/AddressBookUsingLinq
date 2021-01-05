@@ -48,10 +48,12 @@ namespace AddressBookLinqAndDataTable
              contact.State = Console.ReadLine();
              addressBookDataTable.retrieveContactByState(contact);*/
 
-            Contact contact = new Contact();
+            /*Contact contact = new Contact();
             Console.WriteLine("Enter the City ");
-            contact.City = Console.ReadLine();
+            contact.City = Console.ReadLine();*/
             //addressBookDataTable.sortContactByGivenCity(contact);
+
+            addressBookDataTable.getCountByAddressBookType();
         }
     }
 }

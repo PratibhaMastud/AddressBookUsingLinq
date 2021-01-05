@@ -14,6 +14,7 @@ namespace AddressBookLinqAndDataTable
         public int ZipCode { get; set; }
         public long PhoneNumber { get; set; }
         public string Email { get; set; }
-
+        public string AddressBookName { get; set; }
+        public string AddressBookType { get; set; }
     }
 }

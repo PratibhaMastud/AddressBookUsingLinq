@@ -23,13 +23,15 @@ namespace AddressBookLinqAndDataTable
             dataTable.Columns.Add("ZipCode", typeof(int));
             dataTable.Columns.Add("PhoneNumber", typeof(long));
             dataTable.Columns.Add("Email", typeof(string));
-            dataTable.Rows.Add("Pratibha", "Mastud", "nerul", "navimumbai", "maharashtra", 400705, 9987932434, "Mastud@gmail.com");
-            dataTable.Rows.Add("Pranli", "Chouhan", "ghansoli", "navimumbai", "maharashtra", 400701, 9987932434, "Chouhan@gmail.com");
-            dataTable.Rows.Add("ritesh", "mahatre", "thane", "navimumbai", "maharashtra", 400703, 9987932434, "mahatre@gmail.com");
-            dataTable.Rows.Add("sonali", "padme", "dombivli", "Mumbai", "maharashtra", 400710, 9987932434, "padme@gmail.com");
-            dataTable.Rows.Add("rahul", "sable", "chembor", "Mumbai", "maharashtra", 400703, 9987932434, "sable@gmail.com");
-            dataTable.Rows.Add("kartik", "bhoir", " koper khairne", "navimumbai", "maharashtra", 400701, 9987932434, "bhoir@gmail.com");
-            dataTable.Rows.Add("priyanka", "parde", "vashi", "navimumbai", "maharashtra", 400701, 9987932434, "parde@gmail.com");
+            dataTable.Columns.Add("AddressBookName", typeof(string));
+            dataTable.Columns.Add("AddressBookType", typeof(string));
+            dataTable.Rows.Add("Pratibha", "Mastud", "nerul", "navimumbai", "maharashtra", 400705, 9987932434, "Mastud@gmail.com", "FamilyBook", "Family");
+            dataTable.Rows.Add("Pranli", "Chouhan", "ghansoli", "navimumbai", "maharashtra", 400701, 9987932434, "Chouhan@gmail.com", "FamilyBook", "Family");
+            dataTable.Rows.Add("ritesh", "mahatre", "thane", "navimumbai", "maharashtra", 400703, 9987932434, "mahatre@gmail.com", "FamilyBook", "Family");
+            dataTable.Rows.Add("sonali", "padme", "dombivli", "Mumbai", "maharashtra", 400710, 9987932434, "padme@gmail.com", "FriendsBook", "Friends");
+            dataTable.Rows.Add("rahul", "sable", "chembor", "Mumbai", "maharashtra", 400703, 9987932434, "sable@gmail.com", "FriendsBook", "Friends");
+            dataTable.Rows.Add("kartik", "bhoir", " koper khairne", "navimumbai", "maharashtra", 400701, 9987932434, "bhoir@gmail.com", "FriendsBook", "Friends");
+            dataTable.Rows.Add("priyanka", "parde", "vashi", "navimumbai", "maharashtra", 400701, 9987932434, "parde@gmail.com", "FamilyBook", "Family");
             return dataTable;
         }
 
@@ -65,6 +67,7 @@ namespace AddressBookLinqAndDataTable
                 Console.WriteLine("Updated contact");
             }
         }
+
 
         public void deleteParticularContact(Contact contact)
         {
@@ -105,6 +108,7 @@ namespace AddressBookLinqAndDataTable
                 Console.WriteLine("ZipCode:-" + record.Field<int>("ZipCode"));
                 Console.WriteLine("PhoneNumber:-" + record.Field<long>("PhoneNumber"));
                 Console.WriteLine("Email:-" + record.Field<string>("Email"));
+
             }
         }
 
@@ -125,3 +129,4 @@ namespace AddressBookLinqAndDataTable
         }
     }
 }
+
